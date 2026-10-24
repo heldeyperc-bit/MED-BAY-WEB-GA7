@@ -1,0 +1,174 @@
+
+:root {
+    --fondo: #eef6f7;
+    --turquesa: #20a4a3;
+    --turquesa-oscuro: #137675;
+    --azul: #103f55;
+    --blanco: #ffffff;
+    --texto: #526775;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--azul);
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: var(--blanco);
+}
+
+.marca {
+    color: var(--azul);
+    font-weight: 800;
+    font-size: 1.35rem;
+    text-decoration: none;
+}
+
+.marca span {
+    color: var(--turquesa);
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    color: var(--azul);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.portada {
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 60px 10%;
+}
+
+.contenido {
+    max-width: 520px;
+}
+
+.etiqueta {
+    color: var(--turquesa-oscuro);
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin: 18px 0;
+}
+
+.contenido > p:not(.etiqueta) {
+    color: var(--texto);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 15px 25px;
+    border-radius: 9px;
+    background: var(--turquesa);
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.boton:hover {
+    background: var(--turquesa-oscuro);
+}
+
+.panel {
+    width: 360px;
+    max-width: 100%;
+    padding: 35px;
+    background: var(--blanco);
+    border-radius: 22px;
+    box-shadow: 0 15px 45px #103f5514;
+    text-align: center;
+}
+
+.simbolo {
+    display: grid;
+    place-items: center;
+    width: 75px;
+    height: 75px;
+    margin: auto;
+    border-radius: 20px;
+    background: var(--turquesa);
+    color: white;
+    font-size: 3rem;
+}
+
+.panel p {
+    color: var(--texto);
+}
+
+.indicadores {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.indicadores div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.indicadores strong {
+    color: var(--turquesa-oscuro);
+    font-size: 1.3rem;
+}
+
+.indicadores span {
+    color: var(--texto);
+    font-size: 0.8rem;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    color: var(--texto);
+}
+
+@media (max-width: 760px) {
+    .encabezado {
+        flex-wrap: wrap;
+        gap: 18px;
+        padding: 20px 6%;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .portada {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 45px 6%;
+    }
+
+    .panel {
+        width: 100%;
+    }
+}
