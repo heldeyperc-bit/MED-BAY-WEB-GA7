@@ -224,3 +224,92 @@ footer {
     font-size: 0.8rem;
 }
 
+/* Dashboard MED-BAY */
+
+.dashboard {
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 6%;
+}
+
+.bienvenida h1 {
+    margin: 12px 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.bienvenida p:last-child {
+    color: var(--texto);
+}
+
+.resumen {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin: 35px 0;
+}
+
+.tarjeta {
+    padding: 24px;
+    background: var(--blanco);
+    border-radius: 14px;
+    box-shadow: 0 8px 25px #103f550c;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tarjeta span,
+.tarjeta small {
+    color: var(--texto);
+}
+
+.tarjeta strong {
+    font-size: 2rem;
+    color: var(--turquesa-oscuro);
+}
+
+.modulos h2 {
+    margin-bottom: 20px;
+}
+
+.rejilla-modulos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.rejilla-modulos a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--blanco);
+    color: var(--azul);
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #dce9eb;
+}
+
+.rejilla-modulos a:hover {
+    border-color: var(--turquesa);
+    color: var(--turquesa-oscuro);
+}
+
+.rejilla-modulos a span {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 800px) {
+    .resumen {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .resumen,
+    .rejilla-modulos {
+        grid-template-columns: 1fr;
+    }
+}
+
