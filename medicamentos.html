@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicamentos y farmacia | MED-BAY</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="encabezado">
+        <a class="marca" href="index.html">
+            <span class="marca-icono">✚</span>
+            <span><strong>PerCont</strong><small>MED-BAY</small></span>
+        </a>
+        <nav>
+            <a href="dashboard.html">Inicio</a>
+            <a href="pacientes.html">Pacientes</a>
+            <a href="medicos.html">Médicos</a>
+            <a href="citas.html">Citas</a>
+            <a href="login.html">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <main class="contenido">
+        <span class="etiqueta">GESTIÓN FARMACÉUTICA</span>
+        <h1>Medicamentos y farmacia</h1>
+        <p>Consulta el inventario de medicamentos y revisa sus existencias y vencimientos.</p>
+
+        <section class="indicadores">
+            <article class="panel">
+                <span class="etiqueta">REFERENCIAS</span>
+                <h2 id="totalMedicamentos">4</h2>
+                <p>Medicamentos de demostración</p>
+            </article>
+            <article class="panel">
+                <span class="etiqueta">EXISTENCIAS BAJAS</span>
+                <h2 id="existenciasBajas">1</h2>
+                <p>Referencias con pocas unidades</p>
+            </article>
+            <article class="panel">
+                <span class="etiqueta">POR REVISAR</span>
+                <h2 id="porVencer">1</h2>
+                <p>Vencimientos próximos de ejemplo</p>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="encabezado-seccion">
+                <div>
+                    <h2>Inventario de medicamentos</h2>
+                    <p>Registros ficticios para mostrar el diseño.</p>
+                </div>
+                <button class="boton" type="button"
+                    onclick="alert('El registro de medicamentos se implementará en una versión funcional posterior.')">
+                    + Nuevo medicamento
+                </button>
+            </div>
+
+            <div class="buscador">
+                <label for="buscarMedicamento">Buscar medicamento</label>
+                <input id="buscarMedicamento" type="search"
+                    placeholder="Nombre, código o presentación">
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Medicamento</th>
+                            <th>Presentación</th>
+                            <th>Existencias</th>
+                            <th>Vencimiento</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaMedicamentos">
+                        <tr>
+                            <td>MED-001</td>
+                            <td>Paracetamol</td>
+                            <td>Tabletas, ejemplo</td>
+                            <td>120</td>
+                            <td>2027-08-30</td>
+                            <td><span class="estado">Disponible</span></td>
+                        </tr>
+                        <tr>
+                            <td>MED-002</td>
+                            <td>Solución salina</td>
+                            <td>Solución, ejemplo</td>
+                            <td>8</td>
+                            <td>2027-04-15</td>
+                            <td><span class="estado estado-pendiente">Existencias bajas</span></td>
+                        </tr>
+                        <tr>
+                            <td>MED-003</td>
+                            <td>Ibuprofeno</td>
+                            <td>Tabletas, ejemplo</td>
+                            <td>65</td>
+                            <td>2027-01-20</td>
+                            <td><span class="estado">Disponible</span></td>
+                        </tr>
+                        <tr>
+                            <td>MED-004</td>
+                            <td>Antiséptico</td>
+                            <td>Solución, ejemplo</td>
+                            <td>32</td>
+                            <td>2026-12-10</td>
+                            <td><span class="estado estado-pendiente">Revisar vencimiento</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="nota">
+                Los datos son ilustrativos. No representan existencias reales ni deben
+                utilizarse para decisiones de dispensación o tratamiento.
+            </p>
+        </section>
+
+        <a class="enlace-volver" href="dashboard.html">← Volver al panel principal</a>
+    </main>
+
+    <footer>
+        <p>© 2026 PerCont · MED-BAY — Nuestra salud siempre presente.</p>
+    </footer>
+
+    <script>
+        const buscador = document.getElementById("buscarMedicamento");
+        const filas = document.querySelectorAll("#tablaMedicamentos tr");
+
+        buscador.addEventListener("input", function () {
+            const consulta = this.value.toLowerCase().trim();
+
+            filas.forEach(function (fila) {
+                fila.hidden =
+                    !fila.textContent.toLowerCase().includes(consulta);
+            });
+        });
+    </script>
+</body>
+</html>
