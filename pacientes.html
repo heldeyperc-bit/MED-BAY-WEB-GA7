@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de pacientes | MED-BAY</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="encabezado">
+        <a class="marca" href="index.html">PerCont <span>MED-BAY</span></a>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="login.html">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <section class="bienvenida">
+            <p class="etiqueta">GESTIÓN MÉDICA</p>
+            <h1>Pacientes</h1>
+            <p>Administra la información general de los pacientes.</p>
+        </section>
+
+        <section class="barra-acciones">
+            <label class="busqueda">
+                <span>Buscar paciente</span>
+                <input type="search" placeholder="Nombre o documento">
+            </label>
+            <button class="boton" type="button"
+                onclick="alert('Demostración: aquí irá el formulario de registro.')">
+                + Registrar paciente
+            </button>
+        </section>
+
+        <section class="tabla-contenedor">
+            <h2>Listado de pacientes</h2>
+            <div class="tabla-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Nombre completo</th>
+                            <th>Edad</th>
+                            <th>Teléfono</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DEMO-001</td>
+                            <td>Paciente de ejemplo 1</td>
+                            <td>35</td>
+                            <td>000 000 0000</td>
+                            <td><span class="estado">Registrado</span></td>
+                        </tr>
+                        <tr>
+                            <td>DEMO-002</td>
+                            <td>Paciente de ejemplo 2</td>
+                            <td>42</td>
+                            <td>000 000 0000</td>
+                            <td><span class="estado">Registrado</span></td>
+                        </tr>
+                        <tr>
+                            <td>DEMO-003</td>
+                            <td>Paciente de ejemplo 3</td>
+                            <td>28</td>
+                            <td>000 000 0000</td>
+                            <td><span class="estado">Registrado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="nota">Datos ficticios para demostración académica.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 PerCont · MED-BAY · Nuestra salud siempre presente</p>
+    </footer>
+</body>
+</html>
