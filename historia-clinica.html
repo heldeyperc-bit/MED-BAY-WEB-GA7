@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia clínica | MED-BAY</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="encabezado">
+        <a class="marca" href="index.html">
+            <span class="marca-icono">✚</span>
+            <span><strong>PerCont</strong><small>MED-BAY</small></span>
+        </a>
+        <nav>
+            <a href="dashboard.html">Inicio</a>
+            <a href="pacientes.html">Pacientes</a>
+            <a href="medicos.html">Médicos</a>
+            <a href="citas.html">Citas</a>
+            <a href="login.html">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <main class="contenido">
+        <span class="etiqueta">INFORMACIÓN ASISTENCIAL</span>
+        <h1>Historia clínica</h1>
+        <p>Consulta organizada de antecedentes y registros clínicos del paciente.</p>
+
+        <section class="panel">
+            <h2>Información del paciente</h2>
+
+            <div class="formulario-grid">
+                <div class="campo">
+                    <label for="documento">Documento del paciente</label>
+                    <input id="documento" type="text" placeholder="Ej. DEMO-1001">
+                </div>
+                <div class="campo">
+                    <label for="nombrePaciente">Nombre completo</label>
+                    <input id="nombrePaciente" type="text" value="María López" readonly>
+                </div>
+                <div class="campo">
+                    <label for="fechaNacimiento">Fecha de nacimiento</label>
+                    <input id="fechaNacimiento" type="date" value="1990-05-12" readonly>
+                </div>
+                <div class="campo">
+                    <label for="grupoSanguineo">Grupo sanguíneo</label>
+                    <input id="grupoSanguineo" type="text" value="No registrado" readonly>
+                </div>
+            </div>
+
+            <p class="nota">
+                Paciente ficticio para demostración. Los datos clínicos reales deben
+                consultarse únicamente en un sistema autorizado.
+            </p>
+        </section>
+
+        <section class="panel">
+            <h2>Antecedentes médicos</h2>
+            <div class="campo">
+                <label for="antecedentes">Antecedentes personales</label>
+                <textarea id="antecedentes" rows="3" readonly>Información de demostración: sin datos clínicos registrados.</textarea>
+            </div>
+            <div class="campo">
+                <label for="alergias">Alergias conocidas</label>
+                <textarea id="alergias" rows="2" readonly>No registradas en este prototipo.</textarea>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="encabezado-seccion">
+                <div>
+                    <h2>Registros de atención</h2>
+                    <p>Ejemplo visual del historial de consultas.</p>
+                </div>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Profesional</th>
+                            <th>Tipo de atención</th>
+                            <th>Observación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2026-10-10</td>
+                            <td>Dra. Laura Martínez</td>
+                            <td>Consulta general</td>
+                            <td>Registro de ejemplo</td>
+                        </tr>
+                        <tr>
+                            <td>2026-09-15</td>
+                            <td>Dr. Carlos Rodríguez</td>
+                            <td>Control médico</td>
+                            <td>Registro de ejemplo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <a class="enlace-volver" href="dashboard.html">← Volver al panel principal</a>
+    </main>
+
+    <footer>
+        <p>© 2026 PerCont · MED-BAY — Nuestra salud siempre presente.</p>
+    </footer>
+</body>
+</html>
