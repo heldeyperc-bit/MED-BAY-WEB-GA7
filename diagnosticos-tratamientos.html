@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnósticos y tratamientos | MED-BAY</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="encabezado">
+        <a class="marca" href="index.html">
+            <span class="marca-icono">✚</span>
+            <span><strong>PerCont</strong><small>MED-BAY</small></span>
+        </a>
+        <nav>
+            <a href="dashboard.html">Inicio</a>
+            <a href="pacientes.html">Pacientes</a>
+            <a href="medicos.html">Médicos</a>
+            <a href="citas.html">Citas</a>
+            <a href="login.html">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <main class="contenido">
+        <span class="etiqueta">GESTIÓN CLÍNICA</span>
+        <h1>Diagnósticos y tratamientos</h1>
+        <p>Consulta los registros clínicos y los tratamientos asociados a cada atención.</p>
+
+        <section class="panel">
+            <div class="encabezado-seccion">
+                <div>
+                    <h2>Registros clínicos</h2>
+                    <p>Información ficticia para demostrar la interfaz.</p>
+                </div>
+                <button class="boton" type="button"
+                    onclick="alert('El registro de diagnósticos estará disponible en una versión funcional posterior.')">
+                    + Nuevo registro
+                </button>
+            </div>
+
+            <div class="buscador">
+                <label for="buscarRegistro">Buscar registro</label>
+                <input id="buscarRegistro" type="search"
+                    placeholder="Paciente, diagnóstico o tratamiento">
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Fecha</th>
+                            <th>Paciente</th>
+                            <th>Profesional</th>
+                            <th>Diagnóstico</th>
+                            <th>Tratamiento</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaRegistros">
+                        <tr>
+                            <td>DX-001</td>
+                            <td>2026-10-10</td>
+                            <td>María López</td>
+                            <td>Dra. Laura Martínez</td>
+                            <td>Control general de ejemplo</td>
+                            <td>Seguimiento médico</td>
+                            <td><span class="estado">Registrado</span></td>
+                        </tr>
+                        <tr>
+                            <td>DX-002</td>
+                            <td>2026-10-12</td>
+                            <td>Juan Pérez</td>
+                            <td>Dr. Carlos Rodríguez</td>
+                            <td>Consulta pediátrica de ejemplo</td>
+                            <td>Control de seguimiento</td>
+                            <td><span class="estado estado-pendiente">En seguimiento</span></td>
+                        </tr>
+                        <tr>
+                            <td>DX-003</td>
+                            <td>2026-10-15</td>
+                            <td>Andrea Torres</td>
+                            <td>Dra. Ana Gómez</td>
+                            <td>Evaluación médica de ejemplo</td>
+                            <td>Revisión posterior</td>
+                            <td><span class="estado">Registrado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="nota">
+                Los registros son ficticios y no constituyen recomendaciones médicas.
+                Esta pantalla no almacena información en una base de datos.
+            </p>
+        </section>
+
+        <a class="enlace-volver" href="dashboard.html">← Volver al panel principal</a>
+    </main>
+
+    <footer>
+        <p>© 2026 PerCont · MED-BAY — Nuestra salud siempre presente.</p>
+    </footer>
+
+    <script>
+        const buscador = document.getElementById("buscarRegistro");
+        const filas = document.querySelectorAll("#tablaRegistros tr");
+
+        buscador.addEventListener("input", function () {
+            const consulta = this.value.toLowerCase().trim();
+
+            filas.forEach(function (fila) {
+                fila.hidden =
+                    !fila.textContent.toLowerCase().includes(consulta);
+            });
+        });
+    </script>
+</body>
+</html>
