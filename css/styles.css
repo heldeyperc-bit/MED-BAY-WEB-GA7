@@ -172,3 +172,55 @@ footer {
         width: 100%;
     }
 }
+
+/* Formularios de MED-BAY */
+
+.panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+    text-align: left;
+}
+
+.panel label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.panel input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d5e1e5;
+    border-radius: 8px;
+    background: #ffffff;
+    font: inherit;
+}
+
+.panel input:focus {
+    outline: 2px solid #20a4a3;
+    outline-offset: 2px;
+}
+
+.panel button.boton {
+    width: 100%;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+.enlace-recuperacion {
+    text-align: right;
+    font-size: 0.85rem;
+}
+
+.enlace-recuperacion a {
+    color: #137675;
+    text-decoration: none;
+}
+
+.nota {
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
