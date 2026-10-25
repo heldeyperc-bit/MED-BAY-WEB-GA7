@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes | MED-BAY</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="encabezado">
+        <a class="marca" href="index.html">
+            <span class="marca-icono">✚</span>
+            <span><strong>PerCont</strong><small>MED-BAY</small></span>
+        </a>
+        <nav>
+            <a href="dashboard.html">Inicio</a>
+            <a href="pacientes.html">Pacientes</a>
+            <a href="medicos.html">Médicos</a>
+            <a href="citas.html">Citas</a>
+            <a href="login.html">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <main class="contenido">
+        <span class="etiqueta">ANÁLISIS Y SEGUIMIENTO</span>
+        <h1>Reportes del sistema</h1>
+        <p>Consulta los indicadores generales y los registros de demostración de MED-BAY.</p>
+
+        <section class="indicadores">
+            <article class="panel">
+                <span class="etiqueta">PACIENTES</span>
+                <h2>120</h2>
+                <p>Registros de ejemplo</p>
+            </article>
+            <article class="panel">
+                <span class="etiqueta">MÉDICOS</span>
+                <h2>18</h2>
+                <p>Profesionales de ejemplo</p>
+            </article>
+            <article class="panel">
+                <span class="etiqueta">CITAS</span>
+                <h2>32</h2>
+                <p>Citas de ejemplo</p>
+            </article>
+            <article class="panel">
+                <span class="etiqueta">MEDICAMENTOS</span>
+                <h2>4</h2>
+                <p>Referencias de ejemplo</p>
+            </article>
+        </section>
+
+        <section class="panel">
+            <h2>Consultar reportes</h2>
+            <p>Selecciona una categoría para visualizar sus registros de demostración.</p>
+
+            <div class="formulario-grid">
+                <div class="campo">
+                    <label for="tipoReporte">Tipo de reporte</label>
+                    <select id="tipoReporte">
+                        <option value="todos">Todos los registros</option>
+                        <option value="pacientes">Pacientes</option>
+                        <option value="citas">Citas médicas</option>
+                        <option value="medicos">Médicos</option>
+                        <option value="medicamentos">Medicamentos</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="buscarReporte">Buscar en el reporte</label>
+                    <input id="buscarReporte" type="search"
+                        placeholder="Escribe una palabra clave">
+                </div>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categoría</th>
+                            <th>Descripción</th>
+                            <th>Fecha de referencia</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaReportes">
+                        <tr data-tipo="pacientes">
+                            <td>Pacientes</td>
+                            <td>Resumen de pacientes registrados</td>
+                            <td>2026-10-25</td>
+                            <td><span class="estado">Disponible en demo</span></td>
+                        </tr>
+                        <tr data-tipo="citas">
+                            <td>Citas</td>
+                            <td>Resumen de citas médicas</td>
+                            <td>2026-10-25</td>
+                            <td><span class="estado">Disponible en demo</span></td>
+                        </tr>
+                        <tr data-tipo="medicos">
+                            <td>Médicos</td>
+                            <td>Directorio del personal médico</td>
+                            <td>2026-10-25</td>
+                            <td><span class="estado">Disponible en demo</span></td>
+                        </tr>
+                        <tr data-tipo="medicamentos">
+                            <td>Medicamentos</td>
+                            <td>Resumen de inventario farmacéutico</td>
+                            <td>2026-10-25</td>
+                            <td><span class="estado">Disponible en demo</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="nota">
+                Los indicadores y registros son ficticios. Los reportes todavía no se
+                generan a partir de una base de datos real.
+            </p>
+        </section>
+
+        <a class="enlace-volver" href="dashboard.html">← Volver al panel principal</a>
+    </main>
+
+    <footer>
+        <p>© 2026 PerCont · MED-BAY — Nuestra salud siempre presente.</p>
+    </footer>
+
+    <script>
+        const tipoReporte = document.getElementById("tipoReporte");
+        const buscarReporte = document.getElementById("buscarReporte");
+        const filas = document.querySelectorAll("#tablaReportes tr");
+
+        function filtrarReportes() {
+            const tipo = tipoReporte.value;
+            const consulta = buscarReporte.value.toLowerCase().trim();
+
+            filas.forEach(function (fila) {
+                const coincideTipo =
+                    tipo === "todos" || fila.dataset.tipo === tipo;
+                const coincideTexto =
+                    fila.textContent.toLowerCase().includes(consulta);
+
+                fila.hidden = !(coincideTipo && coincideTexto);
+            });
+        }
+
+        tipoReporte.addEventListener("change", filtrarReportes);
+        buscarReporte.addEventListener("input", filtrarReportes);
+    </script>
+</body>
+</html>
