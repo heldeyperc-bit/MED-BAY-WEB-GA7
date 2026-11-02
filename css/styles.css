@@ -580,3 +580,110 @@ tbody tr:hover {
     }
 }
 
+/* Módulo interactivo de farmacia MED-BAY */
+
+.contenido-farmacia {
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 6%;
+}
+
+.catalogo-farmacia {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.producto-farmacia {
+    padding: 22px;
+    background: var(--blanco);
+    border: 1px solid #dce9eb;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px #103f550c;
+}
+
+.producto-farmacia h3 {
+    color: var(--azul);
+}
+
+.producto-farmacia p {
+    color: var(--texto);
+}
+
+.precio-farmacia {
+    color: var(--turquesa-oscuro);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.filtros-farmacia {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.filtros-farmacia input,
+.filtros-farmacia select {
+    padding: 12px;
+    border: 1px solid #cbdde2;
+    border-radius: 9px;
+    font: inherit;
+}
+
+.carrito-farmacia {
+    margin-top: 30px;
+    padding: 25px;
+    background: var(--blanco);
+    border-radius: 14px;
+    box-shadow: 0 8px 25px #103f550c;
+}
+
+.carrito-farmacia li {
+    margin: 12px 0;
+    color: var(--texto);
+}
+
+.total-farmacia {
+    color: var(--turquesa-oscuro);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.mensaje-farmacia {
+    margin-top: 15px;
+    color: var(--turquesa-oscuro);
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .contenido-farmacia {
+        padding: 30px 5%;
+    }
+
+    .filtros-farmacia {
+        flex-direction: column;
+    }
+
+    .filtros-farmacia input,
+    .filtros-farmacia select {
+        width: 100%;
+    }
+}
+/* Ocultar productos que no coinciden con los filtros */
+
+.producto-oculto {
+    display: none !important;
+}
+/* Mensajes de validación del inicio de sesión */
+
+.mensaje-login {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--turquesa-oscuro);
+}
+
+.mensaje-error {
+    color: #b42318;
+}
