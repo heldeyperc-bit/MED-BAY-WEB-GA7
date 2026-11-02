@@ -9,8 +9,12 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <header class="encabezado">
-        <a class="marca" href="index.html">PerCont <span>MED-BAY</span></a>
+        <a class="marca" href="index.html">
+            PerCont <span>MED-BAY</span>
+        </a>
+
         <nav>
             <a href="index.html">Inicio</a>
             <a href="login.html">Iniciar sesión</a>
@@ -18,9 +22,12 @@
     </header>
 
     <main class="portada">
+
         <section class="contenido">
             <p class="etiqueta">BIENVENIDO A MED-BAY</p>
+
             <h1>Tu salud, siempre presente</h1>
+
             <p>
                 Accede a la plataforma de gestión médica
                 para consultar sus módulos y herramientas.
@@ -28,11 +35,14 @@
         </section>
 
         <section class="panel">
+
             <h2>Iniciar sesión</h2>
             <p>Ingresa tus datos de acceso</p>
 
-            <form action="#" method="get">
+            <form id="formularioLogin" novalidate>
+
                 <label for="correo">Correo electrónico</label>
+
                 <input
                     type="email"
                     id="correo"
@@ -43,6 +53,7 @@
                 >
 
                 <label for="contrasena">Contraseña</label>
+
                 <input
                     type="password"
                     id="contrasena"
@@ -61,16 +72,29 @@
                 <button class="boton" type="submit">
                     Iniciar sesión
                 </button>
+
+                <p
+                    id="mensajeLogin"
+                    class="mensaje-login"
+                    role="status"
+                    aria-live="polite">
+                </p>
+
             </form>
 
             <p class="nota">
                 Interfaz de demostración académica.
             </p>
+
         </section>
+
     </main>
 
     <footer>
         <p>© 2026 PerCont · MED-BAY · Nuestra salud siempre presente</p>
     </footer>
+
+    <script src="js/login.js"></script>
+
 </body>
 </html>
