@@ -1,0 +1,6 @@
+﻿APRENDIZ: Helmer Perez
+PROGRAMA DE FORMACION: Analisis y desarrollo de software (ADSO)
+NUMERO DE FICHA: 3186696
+PROYECTO: MED-BAY-WEB
+DESCRIPCION: Proyecto web con control de versiones mediante Git.
+CONTENIDO: Archivos del proyecto y repositorio Git local con historial de commits.
